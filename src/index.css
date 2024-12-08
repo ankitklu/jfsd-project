@@ -1,0 +1,292 @@
+/* In your app.css or index.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@keyframes moveUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Move up */
+  }
+}
+
+@keyframes moveDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px); /* Move down */
+  }
+}
+
+.animate-up {
+  animation: moveUp 1s ease-in-out infinite;
+}
+
+.animate-down {
+  animation: moveDown 1s ease-in-out infinite;
+}
+
+/* Stop the animation and apply bulge effect on hover for both the image and the background */
+img:hover {
+  animation-play-state: paused; /* Pause the animation */
+  transform: scale(1.1); /* Bulge effect */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+div.bg-image:hover {
+  animation-play-state: paused; /* Pause the background animation */
+  transform: scale(1.1); /* Bulge effect */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+
+
+/* Pencil drawing animation */
+@keyframes draw-pencil-line {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%; /* Full width */
+  }
+}
+@keyframes bulge {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07); /* Bulges up (scales up) */
+  }
+  100% {
+    transform: scale(1); /* Shrinks back to original size */
+  }
+}
+/* Flip Card CSS */
+.flip-card-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-front {
+  background-color: transparent;
+}
+
+.flip-card-back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+/* Popup Animation */
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.perspective {
+  perspective: 1000px;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.animate-scale-in {
+  animation: scaleIn 0.4s forwards;
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* Ensure a 3D perspective is applied */
+.perspective {
+  perspective: 1000px;
+}
+
+/* The back side is hidden by default */
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Rotate card on hover */
+.group-hover\:rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+@keyframes moveLeftRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.animated-container {
+  animation: moveLeftRight 2s infinite ease-in-out;
+}
+
+
+.animate-popup {
+  animation: popup 0.3s ease-out;
+}
+
+.animate-bulge {
+  animation: bulge 2s ease-in-out infinite; /* Runs indefinitely with a smooth transition */
+}
+/* Slide in from the top */
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-48px); /* Start above */
+    opacity: 0; /* Invisible */
+  }
+  100% {
+    transform: translateY(0); /* Move to original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.transition-opacity {
+  transition: opacity 1s ease-in-out;
+}
+
+.animate-slideInTop {
+  animation: slideInTop 1s ease-out forwards;
+}
+
+/* Slide in from below */
+@keyframes slideInBottom {
+  0% {
+    transform: translateY(48px); /* Start below */
+    opacity: 0; /* Invisible */
+  }
+  100% {
+    transform: translateY(0); /* Move to original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+.animate-slideInBottom {
+  animation: slideInBottom 1s ease-out forwards;
+}
+/* Define unique keyframes for the floating animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animations */
+.animate-floatUp {
+  animation: floatUp 1s infinite ease-in-out;
+}
+
+.animate-floatDown {
+  animation: floatDown 1s infinite ease-in-out;
+}
+
+/* Stop animation and scale up on hover */
+div.image-animation:hover {
+  animation-play-state: paused; /* Pause the floating animation */
+  transform: translateY(0) scale(4); /* Reset Y position and apply bulge */
+}
+
+.pencil-line {
+  position: relative;
+  width: 0;
+  height: 2px; /* Line thickness */
+  background-color: #000; /* Line color */
+  margin: 20px 0;
+  transition: width 1s ease-in-out;
+  /* Initial state: no line */
+  display: none; /* Hidden by default */
+}
+
+.pencil-line.drawing {
+  animation: draw-pencil-line 2s forwards;
+  display: block; /* Show the line */
+}
+
+/* To ensure line is reset and animation can be retriggered */
+.pencil-line {
+  width: 0; /* Reset width */
+  display: block; /* Always visible */
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Tailwind CSS configuration */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Example of a drawing pencil line in action for header or sections */
+.pencil-line-active {
+  display: block; /* Ensures the pencil line appears */
+  animation: draw-pencil-line 1s ease forwards;
+}

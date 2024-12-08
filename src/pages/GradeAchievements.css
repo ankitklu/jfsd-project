@@ -1,0 +1,79 @@
+.app-container {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .title {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .table-container {
+    width: 70%;
+    margin: 50px auto 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .table-header {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  .table-row:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .icon-success {
+    color: green;
+    animation: bounce 1s infinite;
+  }.icon-rejected {
+    color: green;
+    animation: bounce 1s infinite;
+  }.icon-pending {
+    color: green;
+    animation: bounce 1s infinite;
+  }
+  
+  .status-rejected {
+    color: red;
+  }
+  
+  .status-pending {
+    color: orange;
+  }
+  
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
